@@ -4,6 +4,7 @@ import ShowImage from './ShowImage';
 import moment from 'moment';
 import { addItem, updateItem, removeItem } from './cartHelpers';
 
+
 const Card = ({
   product,
   showViewProductButton = true,
@@ -92,6 +93,18 @@ const Card = ({
       )
     );
   };
+  const showSizes = showSizes => {
+    return (
+      showSizes && (
+        <>
+        <label>Size:</label>
+        <select id="size">
+          {product.size.split(' ').map((ele) => <option value={ele}>{ele}</option>)}
+        </select>
+        </>
+      )
+    )
+  }
   return (
     <div className="card ">
       <div className="card-header card-header-1 ">{product.name}</div>
@@ -104,6 +117,8 @@ const Card = ({
         <p className="black-8">Added on {moment(product.createdAt).fromNow()}</p>
         {showStock(product.quantity)}
         <br />
+
+        {showSizes(!showViewProductButton)}
 
         {showViewButton(showViewProductButton)}
 

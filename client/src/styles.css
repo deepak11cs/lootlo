@@ -28,6 +28,25 @@
     font-weight: bold;
 }
 
+.bootstrap-tagsinput {
+    width: 100%;
+    
+  }
+
+#size{
+    width: 100%;
+    padding: 5px;
+}
+
+  .bootstrap-tagsinput .tag {
+    background: transparent);
+    border: 1px solid blue;
+    padding: 0 6px;
+    margin-right: 2px;
+    color: blue;
+    border-radius: 4px;
+  }
+
 /* black shade form 10-1 */
 .black-10 {
     background: #f2f2f2;

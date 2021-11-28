@@ -9,6 +9,7 @@ const AddProduct = () => {
         name: '',
         description: '',
         price: '',
+        size: [],
         categories: [],
         category: '',
         shipping: '',
@@ -26,6 +27,7 @@ const AddProduct = () => {
         name,
         description,
         price,
+        size,
         categories,
         category,
         shipping,
@@ -57,7 +59,8 @@ const AddProduct = () => {
     }, []);
 
     const handleChange = name => event => {
-        const value = name === 'photo' ? event.target.files[0] : event.target.value;
+        let value = name === 'photo' ? event.target.files[0] : event.target.value;
+        
         formData.set(name, value);
         setValues({ ...values, [name]: value });
     };
@@ -73,6 +76,7 @@ const AddProduct = () => {
                 setValues({
                     ...values,
                     name: '',
+                    size: '',
                     description: '',
                     photo: '',
                     price: '',
@@ -101,6 +105,11 @@ const AddProduct = () => {
             <div className="form-group">
                 <label className="text-muted">Description</label>
                 <textarea onChange={handleChange('description')} className="form-control" value={description} />
+            </div>
+
+            <div className="form-group">
+                <label className="text-muted">Sizes (space seperated)</label>
+                <input onChange={handleChange('size')} type="text" value={size} name="size" id="size" className="form-control"/>
             </div>
 
             <div className="form-group">

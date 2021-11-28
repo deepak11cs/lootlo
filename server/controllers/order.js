@@ -30,10 +30,7 @@ exports.create = (req, res) => {
         }
         // User.find({ categories: { $in: categories } }).exec((err, users) => {}
         console.log('ORDER IS JUST SAVED >>> ', order);
-        // send email alert to admin
-        // order.address
-        // order.products.length
-        // order.amount
+        
         const emailData = {
             to: 'deepak.mca19.du@gmail.com', // admin
             from: 'deepak.mca19.du@gmail.com',
